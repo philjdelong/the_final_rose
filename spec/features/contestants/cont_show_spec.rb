@@ -16,13 +16,17 @@ RSpec.describe "As a visitor" do
         hometown: "Columbus, OH"
       )
 
-      @fooseball = @phil.outings.create(
-        name: "Fooseball"
+      @fooseball = Outing.create(
+        name: "Fooseball",
+        location: "Denver"
       )
 
-      @hopscotch = @phil.outings.create(
-        name: "Hopscotch"
+      @hopscotch = Outing.create(
+        name: "Hopscotch",
+        location: "Boulder"
       )
+
+      @phil.outings << [@fooseball, @hopscotch]
 
       visit "/contestants/#{@phil.id}"
     end
