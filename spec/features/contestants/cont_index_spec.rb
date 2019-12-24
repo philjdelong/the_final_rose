@@ -7,13 +7,13 @@ RSpec.describe "As a visitor" do
       @courtney = Bachelorette.create(
         name: "Courtney",
         season_number: 6,
-        description: "WORLD PEACE!"
+        season_description: "WORLD PEACE!"
       )
 
       @hagrid = Bachelorette.create(
         name: "Hagrid",
         season_number: 7,
-        description: "Wingardium Leviosa"
+        season_description: "Wingardium Leviosa"
       )
 
       @phil = @courtney.contestants.create(
@@ -45,11 +45,6 @@ RSpec.describe "As a visitor" do
 
       click_link "#{@sam.name}"
       expect(current_path).to eq("/contestants/#{@sam.id}")
-
-      # move to next story
-      # expect(page).to have_content(@phil.name)
-      # expect(page).to have_content(@phil.age)
-      # expect(page).to have_content(@phil.hometown)
     end
   end
 end
