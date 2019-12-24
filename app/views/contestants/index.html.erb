@@ -2,7 +2,7 @@
 <h3>For <%= @bachelorette.name %>, <%= @bachelorette.season_number %> </h3>
 
 <% @contestants.each do |contestant| %>
-  <h3><%= contestant.name %></h3>
+  <h3><%= link_to "#{contestant.name}", "/contestants/#{contestant.id}" %></h3>
   <p><%= contestant.age %></p>
   <p><%= contestant.hometown %></p>
 <% end %>

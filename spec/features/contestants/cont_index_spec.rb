@@ -33,7 +33,6 @@ RSpec.describe "As a visitor" do
         age: 7,
         hometown: "Hodgenville, KY"
       )
-
     end
 
     it "i can click each contestant name and view their show page" do
