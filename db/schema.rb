@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_12_21_210825) do
     t.integer "season_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
+    t.string "season_description"
   end
 
   create_table "contestants", force: :cascade do |t|

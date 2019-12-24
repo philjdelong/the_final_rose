@@ -7,13 +7,13 @@ RSpec.describe "As a visitor" do
       @courtney = Bachelorette.create(
         name: "Courtney",
         season_number: 6,
-        description: "WORLD PEACE!"
+        season_description: "WORLD PEACE!"
       )
 
       @hagrid = Bachelorette.create(
         name: "Hagrid",
         season_number: 7,
-        description: "Wingardium Leviosa"
+        season_description: "Wingardium Leviosa"
       )
 
       @phil = @courtney.contestants.create(
@@ -37,10 +37,10 @@ RSpec.describe "As a visitor" do
       visit "/bachelorettes/#{@courtney.id}"
     end
 
-    it "i can see name season and description" do
+    it "i can see name season and season description" do
       expect(page).to have_content(@courtney.name)
       expect(page).to have_content(@courtney.season_number)
-      expect(page).to have_content(@courtney.description)
+      expect(page).to have_content(@courtney.season_description)
     end
 
     it "i can click a link to see contestants" do
