@@ -18,19 +18,25 @@ RSpec.describe "As a visitor" do
 
       @phil = @courtney.contestants.create(
         name: "Phil",
-        age: 29,
+        age: 50,
         hometown: "Columbus, OH"
       )
 
       @sam = @courtney.contestants.create(
         name: "Sam",
-        age: 13,
+        age: 30,
+        hometown: "Hawesville, KY"
+      )
+
+      @ron = @courtney.contestants.create(
+        name: "Ron",
+        age: 20,
         hometown: "Hawesville, KY"
       )
 
       @capo = @hagrid.contestants.create(
         name: "Capo",
-        age: 7,
+        age: 25,
         hometown: "Hodgenville, KY"
       )
 
@@ -58,6 +64,10 @@ RSpec.describe "As a visitor" do
       expect(page).to_not have_content(@capo.name)
       expect(page).to_not have_content(@capo.age)
       expect(page).to_not have_content(@capo.hometown)
+    end
+
+    it "i can see contestants average age" do
+      expect(page).to have_content('Average Contestant Age: 33.33')
     end
   end
 end
