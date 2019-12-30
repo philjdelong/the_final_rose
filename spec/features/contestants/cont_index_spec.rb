@@ -28,7 +28,7 @@ RSpec.describe "As a visitor" do
         hometown: "Hawesville, KY"
       )
 
-      @capo = @courtney.contestants.create(
+      @capo = @hagrid.contestants.create(
         name: "Capo",
         age: 7,
         hometown: "Hawesville, KY"
