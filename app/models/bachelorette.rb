@@ -20,4 +20,11 @@ class Bachelorette <ApplicationRecord
   def contestant_total_count
     contestants.length
   end
+
+  def unique_hometowns
+    hometowns = contestants.map do |contestant|
+      contestant.hometown
+    end
+    hometowns.uniq
+  end
 end

@@ -28,15 +28,16 @@ RSpec.describe "As a visitor" do
         hometown: "Hawesville, KY"
       )
 
-      @capo = @hagrid.contestants.create(
+      @capo = @courtney.contestants.create(
         name: "Capo",
         age: 7,
-        hometown: "Hodgenville, KY"
+        hometown: "Hawesville, KY"
       )
+
+      visit "/bachelorettes/#{@courtney.id}/contestants"
     end
 
     it "i can click each contestant name and view their show page" do
-      visit "/bachelorettes/#{@courtney.id}/contestants"
 
       click_link "#{@phil.name}"
       expect(current_path).to eq("/contestants/#{@phil.id}")
@@ -45,6 +46,11 @@ RSpec.describe "As a visitor" do
 
       click_link "#{@sam.name}"
       expect(current_path).to eq("/contestants/#{@sam.id}")
+    end
+
+    it "i can see a list of unique hometowns" do
+      expect(page).to have_content('Columbus, OH')
+      expect(page).to have_content('Hawesville, KY')
     end
   end
 end
