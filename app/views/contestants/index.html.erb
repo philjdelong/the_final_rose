@@ -1,8 +1,22 @@
-<h1>Contestants</h1>
-<h3>For <%= @bachelorette.name %>, <%= @bachelorette.season_number %> </h3>
+<h1><%= @bachelorette.name %></h1>
+<h3>Season: <%= @bachelorette.season_number %> </h3>
+  <br>
 
+<h3>Contestants:</h3>
+<ul>
 <% @contestants.each do |contestant| %>
-  <h3><%= link_to "#{contestant.name}", "/contestants/#{contestant.id}" %></h3>
-  <p><%= contestant.age %></p>
-  <p><%= contestant.hometown %></p>
+  <li>
+    <h3><%= link_to "#{contestant.name}", "/contestants/#{contestant.id}" %></h3>
+    <p>Age: <%= contestant.age %></p>
+    <p>Hometown: <%= contestant.hometown %></p>
+  </li>
 <% end %>
+</ul>
+  <br>
+
+<h3>Contestant Hometowns:</h3>
+<ul>
+  <% @bachelorette.unique_hometowns.each do |hometown| %>
+    <li><%= hometown %></li>
+  <% end %>
+</ul>

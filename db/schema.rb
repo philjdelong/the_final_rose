@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 2019_12_24_201222) do
   create_table "outings", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "contestant_outings", "contestants"
